@@ -1,3 +1,7 @@
+package CaballerosdelZodiaco;
+
+import Main.Menu;
+
 import java.util.Scanner;
 
 public abstract class ZodiacoPorFechadeNacimiento extends Menu {
@@ -100,4 +104,5 @@ public abstract class ZodiacoPorFechadeNacimiento extends Menu {
         }
     }
 
+    public abstract void main();
 }
