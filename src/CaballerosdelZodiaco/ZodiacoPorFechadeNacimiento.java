@@ -105,4 +105,4 @@ public abstract class ZodiacoPorFechadeNacimiento extends Menu {
     }
 
     public abstract void main();
-}
+} //hola
