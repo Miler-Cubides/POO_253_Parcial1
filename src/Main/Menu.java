@@ -10,12 +10,15 @@ import Validadores.ValidadordePalindromo;
 
 import java.util.Scanner;
 
-public abstract class Menu{
-    public static <ValidadorNumeroPerfecto> void main(String[] args) throws InterruptedException {
+public abstract class Menu {
+    public static void main(String[] args) throws InterruptedException
+
+
+    {
         Scanner sc = new Scanner(System.in);
         int option;
 
-        int opcion = 0;
+
         do {
             System.out.println(" MENU PRINCIPAL ");
             System.out.println(" 1. Zodiaco por fecha de nacimiento");
@@ -27,7 +30,9 @@ public abstract class Menu{
             System.out.println(" 7. Conversor de texto a morse ");
             System.out.println(" 8. Gestor de caballeros del zodiaco");
             System.out.println(" 9. Juego");
+            System.out.println("10. Salir");
             System.out.println(" elige una opcion");
+
             option = sc.nextInt();
             switch (option) {
                 case 1:
@@ -42,7 +47,7 @@ public abstract class Menu{
                     break;
 
                 case 2:
-                    System.out.println(" opcion 2. Validadores.Validador de mayoria de edad");
+                    System.out.println(" opcion 2. Validador de mayoria de edad");
                     Validador v;
                     v = new Validador() {
                         @Override
@@ -64,7 +69,7 @@ public abstract class Menu{
                     break;
                 case 4:
                     System.out.println("Opción 4. Validador de palíndromo");
-                    ValidadordePalindromo p = new ValidadordePalindromo(){
+                    ValidadordePalindromo p = new ValidadordePalindromo() {
                         @Override
                         public void main() {
 
@@ -74,7 +79,7 @@ public abstract class Menu{
                     break;
                 case 5:
                     System.out.print(" opcion 5. Validador de capicua ");
-                    ValidadordeCapicua C = new ValidadordeCapicua(){
+                    ValidadordeCapicua C = new ValidadordeCapicua() {
                         @Override
                         public void main() {
 
@@ -83,7 +88,7 @@ public abstract class Menu{
                     C.ejecutar();
                     break;
                 case 6:
-                    System.out.print(" opcion 6. Conversor de morse a texto ");
+                    System.out.print(" opcion 6. Conversor de morse a texto \n");
                     ConversordeMorseaTexto M = new ConversordeMorseaTexto() {
                         @Override
                         public void main() {
@@ -93,8 +98,8 @@ public abstract class Menu{
                     M.ejecutar();
                     break;
                 case 7:
-                    System.out.print(" opcion 7. Conversor de texto a morse ");
-                    ConversordeTextoMorse T =  new ConversordeTextoMorse () {
+                    System.out.print(" opcion 7. Conversor de texto a morse \n");
+                    ConversordeTextoMorse T = new ConversordeTextoMorse() {
                         @Override
                         public void main() {
 
@@ -110,12 +115,15 @@ public abstract class Menu{
                     System.out.print(" opcion 9. Juego");
                     Juego();
                     break;
+                case 10:
+                    System.out.println("Saliendo del programa...");
+                    break;
                 default:
                     System.out.println(" Opción no válida, intenta de nuevo.");
 
             }
             System.out.println();
-        } while (opcion != 10);
+        } while (option != 10);
         sc.close();
     }
 
@@ -150,9 +158,10 @@ public abstract class Menu{
 
     }
 
+    public abstract void ejecutar();
+
     public abstract void main();
 
-    public abstract void ejecutar();
 }
 
 

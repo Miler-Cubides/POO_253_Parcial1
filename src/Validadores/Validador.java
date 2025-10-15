@@ -5,29 +5,46 @@ import Main.Menu;
 import java.util.Scanner;
 
 public abstract class Validador extends Menu {
+
+    @Override
     public void ejecutar() {
-        final int aNioactual = 2025;
-        final int mesactual = 10;
-        final int diaactual = 15;
+
+        int aNioactual = 2025;
+        int mesactual  = 10;
+        int diaactual = 15;
 
         Scanner leer = new Scanner(System.in);
-        System.out.println("Cómo es tu nombre?");
-        String name = leer.nextLine();
 
-        System.out.println(name + " bienvenid@, hoy vas a saber qué caballero dorado eres");
-        System.out.println(name + " ingresa tu día de nacimiento");
+        System.out.println("¿Cómo es tu nombre?");
+        String nombre = leer.nextLine();
+
+        System.out.println(nombre + ", bienvenid@. Vamos a saber si eres mayor de edad o no.");
+        System.out.println("Ingresa tu día de nacimiento:");
         int D = leer.nextInt();
 
-        System.out.println(name + " ingresa tu mes de nacimiento");
+        System.out.println("Ingresa tu mes de nacimiento:");
         int M = leer.nextInt();
 
-        System.out.println(name + " ingresa tu año de nacimiento");
+        System.out.println("Ingresa tu año de nacimiento:");
         int A = leer.nextInt();
 
-        if ((aNioactual-A >= 18) && diaactual <= D && mesactual <= M ) {
-            System.out.println(name + " eres mayor de edad");
+        int edad = aNioactual - A;
+
+
+        if (edad > 18) {
+            System.out.println(nombre + ", eres mayor de edad (" + edad);
+
+
+        } else if (edad == 18) {
+            if (A < mesactual  || (M == mesactual  && D <= diaactual)) {
+                System.out.println(nombre + ", ya cumpliste 18 años. Eres mayor de edad.");
+            } else {
+                System.out.println(nombre + ", aún no has cumplido los 18 años.");
+            }
+
+
         } else {
-            System.out.println(name + " eres menor de edad");
+            System.out.println(nombre + ", eres menor de edad "+ edad);
         }
     }
 
